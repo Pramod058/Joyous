@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Joyous" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Ensure the background is still white -->
+        <item name="android:colorBackground">@android:color/white</item>
+    </style>
+</resources>
