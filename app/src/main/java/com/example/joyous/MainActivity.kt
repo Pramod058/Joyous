@@ -1,6 +1,7 @@
 package com.example.joyous
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
         // Disable dark mode programmatically
         // Disable dark mode on devices running API 29+
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){

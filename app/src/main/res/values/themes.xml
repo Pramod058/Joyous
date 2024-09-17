@@ -3,6 +3,7 @@
     <style name="Base.Theme.Joyous" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Background color set to white -->
         <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="Theme.Joyous" parent="Base.Theme.Joyous" />
