@@ -30,7 +30,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, bottomNavActivity::class.java))
+            val intent = Intent(this, bottomNavActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
         }, 2000)
     }
 }

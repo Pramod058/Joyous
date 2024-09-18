@@ -1,13 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!-- Your fragment layout here -->
+
+    <!-- Greeting Text -->
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:id="@+id/greeting_text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Page"
-        android:layout_gravity="center"
-        />
-</FrameLayout>
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:text="Good Morning"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <!-- Quotes Slider -->
+    <RelativeLayout
+        android:id="@+id/quotes_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/greeting_text">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/quotes_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="16dp"
+            android:scrollbarStyle="insideOverlay"
+            />
+
+        <ImageButton
+            android:id="@+id/prev_quote_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/navigate_before"
+            android:contentDescription="prev_quote_desc"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"/>
+
+        <ImageButton
+            android:id="@+id/next_quote_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/navigate_next"
+            android:contentDescription="next_quote_desc"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
