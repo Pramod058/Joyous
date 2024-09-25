@@ -12,5 +12,6 @@
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ContentDescription" />
 </LinearLayout>
