@@ -30,7 +30,7 @@ class GreetingFragment : Fragment() {
     private fun getGreeting(): String {
         val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
         return when (hour) {
-            in 2..11 -> "Good Morning"
+            in 2..11 -> "Good Maaaaarning"
             in 12..16 -> "Good Afternoon"
             in 17..20 -> "Good Evening"
             else -> "Good Night"
