@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/itemText"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:textSize="18sp"
+        android:paddingLeft="20sp"
+        android:background="@color/list_color"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black" />
+
+
+    <!-- This Switch will only be visible for the Notification item -->
+    <Switch
+        android:id="@+id/switchNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+</RelativeLayout>

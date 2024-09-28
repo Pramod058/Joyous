@@ -12,4 +12,9 @@
     <string name="measure_your_stress_today">Measure your stress today</string>
     <string name="your_stress_over_time">Your stress over time:</string>
     <string name="save">Save</string>
+    <string name="settings">Settings</string>
+    <string name="save_settings">Saves</string>
+    <string name="set_reminder">Set Reminder</string>
+    <string name="notification">Notification</string>
+    <string name="title_activity_saved_journal">savedJournal</string>
 </resources>

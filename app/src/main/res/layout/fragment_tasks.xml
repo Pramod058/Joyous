@@ -7,7 +7,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TaskPage"
+        android:text="Task page ko hero pramod"
         android:layout_gravity="center"
         />
 </FrameLayout>

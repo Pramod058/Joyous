@@ -3,5 +3,5 @@
 <resources>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="darker_gray">#141414</color>
+    <color name="list_color">#B1B2B5</color>
 </resources>

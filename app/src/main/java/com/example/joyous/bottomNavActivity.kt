@@ -2,6 +2,7 @@ package com.example.joyous
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.joyous.SettingsPage.SettingFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class bottomNavActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class bottomNavActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_settings -> {
-                    loadFragment(SettingsFragment())
+                    loadFragment(SettingFragment())
                     true
                 }
                 else -> false
