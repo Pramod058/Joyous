@@ -65,6 +65,11 @@ class LocalStorage(context: Context) {
         return sharedPreferences.getString(key, null)
     }
 
+    // Retrieve all saved journal titles
+    fun getAllJournals(): List<String> {
+        return sharedPreferences.all.keys.toList() // Returns list of all journal titles
+    }
+
     // Remove a journal entry
     fun removeJournal(key: String) {
         editor.remove(key) // Remove the journal entry by key
