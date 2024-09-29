@@ -21,7 +21,7 @@ class bottomNavActivity : AppCompatActivity() {
                     true
                 }
                 R.id.nav_tasks -> {
-                    loadFragment(TasksFragment())
+                    loadFragment(TaskFragment())
                     true
                 }
                 R.id.nav_settings -> {
