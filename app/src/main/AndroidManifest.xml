@@ -26,6 +26,7 @@
         <activity
             android:name=".bottomNavActivity"
             android:exported="false" />
+        <activity android:name=".CreateJournalActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">

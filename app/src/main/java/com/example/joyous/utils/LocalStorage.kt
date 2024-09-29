@@ -45,4 +45,29 @@ class LocalStorage(context: Context) {
             editor.apply()
         }
     }
+
+
+    // Save a journal entry
+    fun saveJournal(title: String, content: String): Boolean {
+        val formattedTitle = title.replace(" ", "") + "_" + System.currentTimeMillis().toString()
+        return try {
+            editor.putString(formattedTitle, content) // Save journal content using title_datetime as the key
+            editor.apply()
+            true // Success
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false // Failure
+        }
+    }
+
+    // Retrieve a journal entry
+    fun getJournal(key: String): String? {
+        return sharedPreferences.getString(key, null)
+    }
+
+    // Remove a journal entry
+    fun removeJournal(key: String) {
+        editor.remove(key) // Remove the journal entry by key
+        editor.apply()
+    }
 }

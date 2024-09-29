@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/journalTitleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Journal Title"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/journalTitleEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter journal title"/>
+
+    <TextView
+        android:id="@+id/journalContentLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Journal Content"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/journalContentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Write your journal"
+        android:gravity="top"
+        android:minLines="5"
+        android:inputType="textMultiLine"/>
+
+    <Button
+        android:id="@+id/saveJournalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Journal"
+        android:layout_marginTop="16dp"/>
+</LinearLayout>
