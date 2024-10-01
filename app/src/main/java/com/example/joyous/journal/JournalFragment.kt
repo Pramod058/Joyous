@@ -11,6 +11,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.joyous.R
 import com.example.joyous.utils.LocalStorage
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class JournalFragment : Fragment() {
 
@@ -38,10 +41,13 @@ class JournalFragment : Fragment() {
     private fun saveJournal() {
         val title = journalTitleEditText.text.toString().trim()
         val content = journalContentEditText.text.toString().trim()
+        val formattedTitle = title.replace("\\s+".toRegex(), "")
+        val dateTime = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
+        val journalKey = formattedTitle+"_"+dateTime
 
         if (title.isNotEmpty() && content.isNotEmpty()) {
             val localStorage = LocalStorage(requireContext())
-            val success = localStorage.saveJournal(title, content)
+            val success = localStorage.saveJournal(journalKey,title, content)
 
             if (success) {
                 Toast.makeText(requireContext(), "Journal saved successfully", Toast.LENGTH_SHORT).show()

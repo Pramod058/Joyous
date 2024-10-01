@@ -83,7 +83,7 @@ class CreateJournalActivity : AppCompatActivity() {
         val journalKey = formattedTitle+"_"+dateTime
         // Save to LocalStorage
        localStorage = LocalStorage(this)
-        val success = localStorage.saveJournal(journalKey, content)
+        val success = localStorage.saveJournal(journalKey, title, content)
 
         // Show toast and handle redirection based on success/failure
         if (success) {

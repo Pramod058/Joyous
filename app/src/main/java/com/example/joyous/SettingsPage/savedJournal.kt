@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.EditText
 import android.widget.GridView
 import android.widget.TextView
 import android.widget.Toast
@@ -15,6 +16,7 @@ import com.example.joyous.utils.LocalStorage
 class savedJournal : AppCompatActivity() {
     private lateinit var gridView: GridView
     private lateinit var previewTextView: TextView
+    private lateinit var journalTitle : TextView
     private lateinit var deleteButton: Button
     private lateinit var localStorage: LocalStorage
 
@@ -28,6 +30,7 @@ class savedJournal : AppCompatActivity() {
         // Initialize views
         gridView = findViewById(R.id.gridViewSavedJournals)
         previewTextView = findViewById(R.id.previewTextArea)
+        journalTitle = findViewById(R.id.journalTitle)
         deleteButton = findViewById(R.id.deleteButton)
 
         // Initialize LocalStorage
@@ -60,7 +63,10 @@ class savedJournal : AppCompatActivity() {
             gridView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
                 selectedJournal = savedJournals[position]
                 selectedPosition = position
-                previewTextView.text = localStorage.getJournal(selectedJournal!!) // Show the content in preview
+                val parts = localStorage.getJournal(selectedJournal!!).toString().split("|")
+                journalTitle.setText(parts[0])
+                previewTextView.text =
+                    parts[1] // Show the content in preview
             }
         } else {
             Toast.makeText(this, "No saved journals", Toast.LENGTH_SHORT).show()

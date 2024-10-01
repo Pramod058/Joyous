@@ -14,6 +14,7 @@ class SavedJournalsActivity : AppCompatActivity() {
     private lateinit var localStorage: LocalStorage
     private lateinit var gridView: GridView
     private lateinit var previewTextArea: EditText
+    private lateinit var journalTitle : EditText
     private lateinit var deleteButton: Button
     private var selectedJournalTitle: String? = null
 
@@ -27,6 +28,7 @@ class SavedJournalsActivity : AppCompatActivity() {
         // Initialize UI elements
         gridView = findViewById(R.id.gridViewSavedJournals)
         previewTextArea = findViewById(R.id.previewTextArea)
+        journalTitle = findViewById(R.id.journalTitle)
         deleteButton = findViewById(R.id.deleteButton)
 
         // Get all saved journal titles
@@ -39,8 +41,11 @@ class SavedJournalsActivity : AppCompatActivity() {
         // Set up item click listener for GridView
         gridView.setOnItemClickListener { _, _, position, _ ->
             selectedJournalTitle = savedJournals[position]
-            val journalContent = localStorage.getJournal(selectedJournalTitle!!)
-            previewTextArea.setText(journalContent) // Display selected journal content in preview
+            val journalContent = localStorage.getJournal(selectedJournalTitle!!).toString()
+            println(journalContent)
+            val parts = journalContent.split("|")
+            journalTitle.setText(parts[0])
+            previewTextArea.setText(parts[1]) // Display selected journal content in preview
         }
 
         // Set up delete button listener

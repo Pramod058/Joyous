@@ -54,6 +54,12 @@
             android:text="Delete" />
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/journalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginEnd="8dp" />
 
     <!-- TextArea for Preview -->
     <EditText
