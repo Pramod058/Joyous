@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Joyous"
         tools:targetApi="31">
         <activity
+            android:name=".journal.SavedJournalsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingsPage.savedJournal"
             android:exported="false"
             android:label="@string/title_activity_saved_journal"
@@ -26,7 +29,7 @@
         <activity
             android:name=".bottomNavActivity"
             android:exported="false" />
-        <activity android:name=".CreateJournalActivity"/>
+        <activity android:name=".CreateJournalActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
