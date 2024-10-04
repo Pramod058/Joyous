@@ -82,6 +82,7 @@ class savedJournal : AppCompatActivity() {
             }
         } else {
             Toast.makeText(this, "No saved journals", Toast.LENGTH_SHORT).show()
+            gridView.adapter = null // Clear the GridView if no journals remain
         }
     }
 
@@ -95,6 +96,10 @@ class savedJournal : AppCompatActivity() {
 
         // Clear the preview and reset selectedJournal
         clearSelection()
+        // If no journals remain, ensure the grid is cleared
+        if (localStorage.getAllJournals().isEmpty()) {
+            gridView.adapter = null // Clear the GridView
+        }
     }
 
     // Show delete confirmation dialog
