@@ -55,8 +55,20 @@ class savedJournal : AppCompatActivity() {
         val savedJournals = localStorage.getAllJournals()
 
         if (savedJournals.isNotEmpty()) {
+
+            // Create a list of formatted titles
+            val displayTitles = savedJournals.map { key ->
+                val journalData = localStorage.getJournal(key)
+                if (journalData != null) {
+                    val content = journalData.split("|")
+                    val titleOnly = content[0]
+                    if (titleOnly.length > 30) titleOnly.substring(0, 30) + "..." else titleOnly // Trim the title if longer than 50 characters
+                } else {
+                    "Untitled"
+                }
+            }
             // Set up adapter
-            val adapter = SavedJournalAdapter(this, savedJournals)
+            val adapter = SavedJournalAdapter(this, displayTitles)
             gridView.adapter = adapter
 
             // Handle click events on GridView
@@ -104,5 +116,6 @@ class savedJournal : AppCompatActivity() {
         selectedJournal = null
         selectedPosition = null
         previewTextView.text = "Journal preview"
+        journalTitle.text = null
     }
 }
