@@ -1,21 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsPage.savedJournal">
-
-
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
 
     <TextView
+        android:id="@+id/savedJournals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saved Journals"
+        android:textSize="18sp"
+        android:paddingTop="50dp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- GridView for Saved Journals -->
+    <GridView
+        android:id="@+id/gridViewSavedJournals"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0"
+        android:horizontalSpacing="16dp"
+        android:maxHeight="100dp"
+        android:numColumns="3"
+        android:scrollbars="vertical"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="16dp" />
+
+    <!-- Preview Section -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pramod DADA DON HO yo saved page ko"
-        android:gravity="center_horizontal"
-        android:textStyle="bold"
-        android:textSize="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp">
 
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/previewLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preview"
+            android:textSize="18sp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/journalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginEnd="8dp" />
+
+    <!-- TextArea for Preview -->
+    <EditText
+        android:id="@+id/previewTextArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Journal preview"
+        android:inputType="textMultiLine"
+        android:focusable="false"
+        android:editable="false"
+        android:minHeight="150dp"
+        android:maxHeight="280dp"
+        android:layout_marginTop="8dp"
+        android:background="#EFEFEF"
+        android:padding="8dp"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="100dp"/>
+
+</LinearLayout>

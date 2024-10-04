@@ -45,4 +45,51 @@ class LocalStorage(context: Context) {
             editor.apply()
         }
     }
+
+
+    // Save a journal entry
+    fun saveJournal(journalKey:String, title: String, content: String): Boolean {
+        val formattedTitle = journalKey.replace(" ", "") + "_" + System.currentTimeMillis().toString()
+        val journalData = title + "|" + content // Store both title and content separated by "|"
+        return try {
+            editor.putString(formattedTitle, journalData) // Save journal content using title_datetime as the key
+            editor.apply()
+            true // Success
+        } catch (e: Exception) {
+            e.printStackTrace()
+            false // Failure
+        }
+    }
+
+//    // Retrieve a journal entry
+//    fun getJournal(key: String): String? {
+//        return sharedPreferences.getString(key, null)
+//    }
+
+    // Retrieve the journal entry (title and content)
+    fun getJournal(key: String): String? {
+        val journalData = sharedPreferences.getString(key, null)
+        return if (journalData != null) {
+//            val parts = journalData.split("|")
+//            if (parts.size == 2) {
+//                Pair(parts[0], parts[1]) // Return the title and content as a pair
+//            } else {
+//                null // Invalid data
+//            }
+            return journalData
+        } else {
+            null // No data found
+        }
+    }
+
+    // Retrieve all saved journal titles
+    fun getAllJournals(): List<String> {
+        return sharedPreferences.all.keys.toList() // Returns list of all journal titles
+    }
+
+    // Remove a journal entry
+    fun removeJournal(key: String) {
+        editor.remove(key) // Remove the journal entry by key
+        editor.apply()
+    }
 }
